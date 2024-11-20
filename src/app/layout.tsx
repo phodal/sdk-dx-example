@@ -28,6 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav>
+          <ul>
+            <li><a href="/spec/database">Database Specification</a></li>
+            <li><a href="/spec/log">Log Specification</a></li>
+            <li><a href="/spec/middleware">Middleware Specification</a></li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>

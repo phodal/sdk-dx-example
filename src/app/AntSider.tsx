@@ -2,7 +2,7 @@
 
 import { Layout } from "antd";
 
-const AntSider = (props: any) => {
+const AntSider = (props: React.ComponentProps<typeof Layout.Sider>) => {
   return <Layout.Sider {...props} />;
 };
 

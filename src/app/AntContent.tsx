@@ -2,7 +2,7 @@
 
 import { Layout } from "antd";
 
-const AntContent = (props: any) => {
+const AntContent = (props: React.ComponentProps<typeof Layout.Content>) => {
   return <Layout.Content {...props} />;
 };
 

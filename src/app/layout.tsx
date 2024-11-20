@@ -33,6 +33,7 @@ export default function RootLayout({
             <li><a href="/spec/database">Database Specification</a></li>
             <li><a href="/spec/log">Log Specification</a></li>
             <li><a href="/spec/middleware">Middleware Specification</a></li>
+            <li><a href="/install">Install SDK</a></li>
           </ul>
         </nav>
         {children}

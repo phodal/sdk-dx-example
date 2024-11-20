@@ -2,6 +2,7 @@
 
 import styles from './page.module.css';
 import { Typography, List, Button, Card } from 'antd';
+import { useRouter } from "next/navigation";
 
 const errorCodeExplanations = {
 	400: 'Bad Request: The server could not understand the request due to invalid syntax.',
@@ -14,8 +15,12 @@ const errorCodeExplanations = {
 	504: 'Gateway Timeout: The server is acting as a gateway or proxy and did not get a response in time from the upstream server.'
 };
 
+/// https://github.com/vercel/next.js/discussions/49465
+const getHash = () => (typeof window !== 'undefined' ? decodeURIComponent(window.location.hash.replace('#', '')) : undefined);
+
 const ErrorCodePage = () => {
-	const hash = window.location.hash;
+	const router = useRouter();
+	const hash = getHash() || '';
 	const errorCode = hash.replace('#', '')
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
@@ -27,7 +32,9 @@ const ErrorCodePage = () => {
 					<Card>
 						<Typography.Title className={styles.errorCode}>{errorCode}</Typography.Title>
 						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
-						<Button type="primary" onClick={() => window.location.hash = ''}>Back to list</Button>
+						<Button type="primary" onClick={() => {
+							router.push('/errorcode');
+						}}>Back to list</Button>
 					</Card>
 			) : (
 				<List

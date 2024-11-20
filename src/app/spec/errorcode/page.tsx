@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './page.module.css';
+import { Typography, List, Button, Card } from 'antd';
 
 const errorCodeExplanations = {
 	400: 'Bad Request: The server could not understand the request due to invalid syntax.',
@@ -23,18 +24,20 @@ const ErrorCodePage = () => {
 	return (
 		<div className={styles.container}>
 			{explanation ? (
-				<>
-					<h1 className={styles.errorCode}>{errorCode}</h1>
-					<p className={styles.explanation}>{explanation}</p>
-				</>
+					<Card>
+						<Typography.Title className={styles.errorCode}>{errorCode}</Typography.Title>
+						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
+						<Button type="primary" onClick={() => window.location.hash = ''}>Back to list</Button>
+					</Card>
 			) : (
-				<ul>
-					{Object.entries(errorCodeExplanations).map(([code, explanation]) => (
-						<li key={code}>
+				<List
+					dataSource={Object.entries(errorCodeExplanations)}
+					renderItem={([code, explanation]) => (
+						<List.Item>
 							<a href={`#${code}`}>{code}</a>: {explanation}
-						</li>
-					))}
-				</ul>
+						</List.Item>
+					)}
+				/>
 			)}
 		</div>
 	);

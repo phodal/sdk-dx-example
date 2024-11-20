@@ -35,6 +35,11 @@ const items: MenuProps["items"] = [
     icon: <QuestionCircleOutlined />,
     label: <a href="/faq">FAQ</a>,
   },
+  {
+    key: "errorcode",
+    icon: <FileTextOutlined />,
+    label: <a href="/spec/errorcode">Error Code</a>,
+  }
 ];
 
 const AntSider = (props: React.ComponentProps<typeof Layout.Sider>) => {

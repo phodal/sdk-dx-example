@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 
 const errorCodeExplanations = {
@@ -15,9 +15,10 @@ const errorCodeExplanations = {
 };
 
 const ErrorCodePage = () => {
-  const router = useRouter();
-  const { hash } = router.asPath;
-  const errorCode = hash ? hash.substring(1) : null;
+  const hash = usePathname()
+  const errorCode = hash.replace('/errorcode/', '')
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   const explanation = errorCodeExplanations[errorCode];
 
   return (

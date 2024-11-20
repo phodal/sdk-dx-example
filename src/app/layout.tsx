@@ -1,6 +1,11 @@
-    import type { Metadata } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Layout } from "antd";
+import AntdRegistry from "@ant-design/nextjs-registry";
+import AntHeader from "./AntHeader";
+import AntSider from "./AntSider";
+import AntContent from "./AntContent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,16 +33,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>
-          <ul>
-            <li><a href="/spec/database">Database Specification</a></li>
-            <li><a href="/spec/log">Log Specification</a></li>
-            <li><a href="/spec/middleware">Middleware Specification</a></li>
-            <li><a href="/install">Install SDK</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
-        </nav>
-        {children}
+        <AntdRegistry>
+          <Layout style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+            <AntHeader style={{ display: "flex", alignItems: "center" }}>
+              Header
+            </AntHeader>
+            <Layout style={{ flex: 1, display: "flex", flexDirection: "row", overflow: "hidden" }}>
+              <AntSider width={240} style={{ overflow: "auto" }} />
+              <Layout
+                style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "auto" }}>
+                <AntContent
+                  style={{
+                    margin: 0,
+                    minHeight: 280,
+                  }}
+                >
+                  {children}
+                </AntContent>
+              </Layout>
+            </Layout>
+          </Layout>
+        </AntdRegistry>
       </body>
     </html>
   );

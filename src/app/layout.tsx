@@ -41,7 +41,7 @@ export default function RootLayout({
               Header
             </AntHeader>
             <Layout style={{ flex: 1, display: "flex", flexDirection: "row", overflow: "hidden" }}>
-              <AntSider width={240} style={{ overflow: "auto" }} defaultSelectedKeys={[currentPath]} />
+              <AntSider width={240} style={{ overflow: "auto" }} />
               <Layout
                 style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "auto" }}>
                 <AntContent

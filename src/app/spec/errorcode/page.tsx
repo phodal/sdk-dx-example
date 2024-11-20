@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 
 const errorCodeExplanations = {

@@ -1,6 +1,5 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { Typography, List, Button, Card } from 'antd';
 

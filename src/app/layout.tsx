@@ -28,6 +28,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
+
   return (
     <html lang="en">
       <body
@@ -39,7 +41,7 @@ export default function RootLayout({
               Header
             </AntHeader>
             <Layout style={{ flex: 1, display: "flex", flexDirection: "row", overflow: "hidden" }}>
-              <AntSider width={240} style={{ overflow: "auto" }} />
+              <AntSider width={240} style={{ overflow: "auto" }} defaultSelectedKeys={[currentPath]} />
               <Layout
                 style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "auto" }}>
                 <AntContent

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import AntHeader from "../components/AntHeader";
+import AntSider from "../components/AntSider";
+import AntContent from "../components/AntContent";
+import AntdRegistry from "../components/AntdRegistry";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,16 +32,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>
-          <ul>
-            <li><a href="/spec/database">Database Specification</a></li>
-            <li><a href="/spec/log">Log Specification</a></li>
-            <li><a href="/spec/middleware">Middleware Specification</a></li>
-            <li><a href="/install">Install SDK</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
-        </nav>
-        {children}
+        <AntdRegistry>
+          <AntHeader>
+            <ul>
+              <li><a href="/spec/database">Database Specification</a></li>
+              <li><a href="/spec/log">Log Specification</a></li>
+              <li><a href="/spec/middleware">Middleware Specification</a></li>
+              <li><a href="/install">Install SDK</a></li>
+              <li><a href="/faq">FAQ</a></li>
+            </ul>
+          </AntHeader>
+          <AntSider>Sider content here</AntSider>
+          <AntContent>{children}</AntContent>
+        </AntdRegistry>
       </body>
     </html>
   );

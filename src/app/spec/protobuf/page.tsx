@@ -14,7 +14,7 @@ const ProtobufSpecification = () => {
       <p>Here is an example of a Protobuf schema definition:</p>
       <pre>
         <code>
-          {`syntax = "proto3";
+          {`syntax = &quot;proto3&quot;;
 
 message Person {
   string name = 1;
@@ -23,7 +23,7 @@ message Person {
 }`}
         </code>
       </pre>
-      <p>This schema defines a message type "Person" with three fields: name, id, and email. Each field has a type and a unique number.</p>
+      <p>This schema defines a message type &quot;Person&quot; with three fields: name, id, and email. Each field has a type and a unique number.</p>
     </div>
   );
 };

@@ -33,7 +33,7 @@ const ErrorCodePage = () => {
 						<Typography.Title className={styles.errorCode}>{errorCode}</Typography.Title>
 						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
 						<Button type="primary" onClick={() => {
-							router.push('/errorcode');
+							router.push('/spec/errorcode');
 						}}>Back to list</Button>
 					</Card>
 			) : (

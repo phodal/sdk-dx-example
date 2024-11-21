@@ -31,9 +31,9 @@ const items: MenuProps["items"] = [
     label: <a href="/spec/middleware">Middleware</a>,
   },
   {
-    key: "errorcode",
+    key: "error-code",
     icon: <FileTextOutlined />,
-    label: <a href="/spec/errorcode">Error Code</a>,
+    label: <a href="/spec/error-code">Error Code</a>,
   },
   {
     key: "faq",

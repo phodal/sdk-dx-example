@@ -33,7 +33,7 @@ const ErrorCodePage = () => {
 						<Typography.Title className={styles.errorCode}>{errorCode}</Typography.Title>
 						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
 						<Button type="primary" onClick={() => {
-							router.push('/spec/errorcode');
+							router.push('/spec/error-code');
 						}}>Back to list</Button>
 					</Card>
 			) : (
@@ -41,8 +41,8 @@ const ErrorCodePage = () => {
 					dataSource={Object.entries(errorCodeExplanations)}
 					renderItem={([code, explanation]) => (
 						<List.Item>
-							<a href={`/errorcode#${code}`} onClick={() => {
-								router.push(`/errorcode#${code}`);
+							<a href={`/spec/error-code#${code}`} onClick={() => {
+								router.push(`/spec/error-code#${code}`);
 							}}>
 								{code}
 							</a> - {explanation}

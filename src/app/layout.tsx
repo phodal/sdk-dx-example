@@ -35,9 +35,7 @@ export default function RootLayout({
       >
         <AntdRegistry>
           <Layout style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-            <AntHeader style={{ display: "flex", alignItems: "center" }}>
-              Header
-            </AntHeader>
+            <AntHeader style={{ display: "flex", alignItems: "center" }} />
             <Layout style={{ flex: 1, display: "flex", flexDirection: "row", overflow: "hidden" }}>
               <AntSider width={240} style={{ overflow: "auto" }} />
               <Layout

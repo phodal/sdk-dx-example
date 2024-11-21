@@ -34,6 +34,7 @@ const ErrorCodePage = () => {
 						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
 						<Button type="primary" onClick={() => {
 							router.push('/spec/error-code');
+							setExplanation(undefined);
 						}}>Back to list</Button>
 					</Card>
 			) : (

@@ -24,7 +24,7 @@ const ErrorCodePage = () => {
 	const errorCode = hash.replace('#', '')
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
-	const explanation = errorCodeExplanations[errorCode];
+	const [explanation, setExplanation] = useState<string | undefined>(errorCodeExplanations[errorCode]);
 
 	return (
 		<div className={styles.container}>
@@ -39,13 +39,14 @@ const ErrorCodePage = () => {
 			) : (
 				<List
 					dataSource={Object.entries(errorCodeExplanations)}
-					renderItem={([code, explanation]) => (
+					renderItem={([code, value]) => (
 						<List.Item>
 							<a href={`/spec/error-code#${code}`} onClick={() => {
 								router.push(`/spec/error-code#${code}`);
+								setExplanation(value);
 							}}>
 								{code}
-							</a> - {explanation}
+							</a> - {value}
 						</List.Item>
 					)}
 				/>

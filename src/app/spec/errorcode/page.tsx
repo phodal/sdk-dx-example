@@ -41,7 +41,11 @@ const ErrorCodePage = () => {
 					dataSource={Object.entries(errorCodeExplanations)}
 					renderItem={([code, explanation]) => (
 						<List.Item>
-							<a href={`#${code}`}>{code}</a>: {explanation}
+							<a href={`/errorcode#${code}`} onClick={() => {
+								router.push(`/errorcode#${code}`);
+							}}>
+								{code}
+							</a> - {explanation}
 						</List.Item>
 					)}
 				/>

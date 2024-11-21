@@ -16,12 +16,12 @@ const errorCodeExplanations = {
 };
 
 /// https://github.com/vercel/next.js/discussions/49465
-const getHash = () => (typeof window !== 'undefined' ? decodeURIComponent(window.location.hash.replace('#', '')) : undefined);
+const getHash = () => (typeof window !== 'undefined' ? window.location.hash.replace('#', '') : undefined);
 
 const ErrorCodePage = () => {
 	const router = useRouter();
 	const hash = getHash() || '';
-	const errorCode = hash.replace('#', '')
+	const errorCode = hash;
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	const explanation = errorCodeExplanations[errorCode];
@@ -33,7 +33,7 @@ const ErrorCodePage = () => {
 						<Typography.Title className={styles.errorCode}>{errorCode}</Typography.Title>
 						<Typography.Paragraph className={styles.explanation}>{explanation}</Typography.Paragraph>
 						<Button type="primary" onClick={() => {
-							router.push('/errorcode');
+							router.push('/spec/errorcode');
 						}}>Back to list</Button>
 					</Card>
 			) : (

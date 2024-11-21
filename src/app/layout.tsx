@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Layout } from "antd";
+import { Layout, Typography } from "antd";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import AntHeader from "./AntHeader";
 import AntSider from "./AntSider";
@@ -35,9 +35,7 @@ export default function RootLayout({
       >
         <AntdRegistry>
           <Layout style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-            <AntHeader style={{ display: "flex", alignItems: "center" }}>
-              Header
-            </AntHeader>
+            <AntHeader style={{ display: "flex", alignItems: "center" }} />
             <Layout style={{ flex: 1, display: "flex", flexDirection: "row", overflow: "hidden" }}>
               <AntSider width={240} style={{ overflow: "auto" }} />
               <Layout

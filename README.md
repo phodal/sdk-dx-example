@@ -1,5 +1,6 @@
 # Framework SDK Example
 
+## Prompt
 
 > 这是一个 Framework 的文档网站，请实现一个查看 HTTP 错误码解释的页面，我希望的路由是 /spec/errorcode#404 指定对应的 404 解释
 

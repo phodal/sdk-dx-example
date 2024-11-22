@@ -36,11 +36,6 @@ const items: MenuProps["items"] = [
     label: <a href="/spec/error-code">Error Code</a>,
   },
   {
-    key: "portobuf",
-    icon: <FileTextOutlined />,
-    label: <a href="/spec/portobuf">Portobuf</a>,
-  },
-  {
     key: "protobuf",
     icon: <FileTextOutlined />,
     label: <a href="/spec/protobuf">Protobuf</a>,
